@@ -1,0 +1,48 @@
+nav{
+    color: white;
+}
+.navbar {
+    background-color: #030712;
+    
+}
+.navbar .navbar-brand {
+    font-style: normal;
+    font-size: 24px;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+
+}
+.nav-logo {
+    font-size: 35px;
+    margin-right: 15px;
+    margin-left: 20px;
+}
+.nav-manu .nav-item .nav-link {
+    font-family: 'Momo Trust Display', sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+    margin-right: 15px;
+    margin-left: 15px;
+    transition: transform 0.25s ease, color 0.25s ease;
+    will-change: transform, color;
+}
+
+.nav-manu .nav-item .nav-link:hover {
+    transform: scale(1.08); /* smooth visual "grow" without reflow */
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+.nav-buttons{
+    margin-left: 20px;
+    margin-right: 20px;
+    
+}
+.nav-buttons .btn {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease;
+    will-change: transform, color, background-color;
+}
+

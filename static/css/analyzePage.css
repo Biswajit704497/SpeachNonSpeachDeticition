@@ -1,0 +1,133 @@
+.analyze-inner {
+    text-align: center;
+    padding: 50px;
+    background-color: #000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+}
+
+.analyze-inner h1 {
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.analyze-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.analyze-box {
+    background: rgba(16, 16, 24, 0.8);
+    border-radius: 24px;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.analyze-image-container {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.analyze-image-container img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.analyze-metrics {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.metric-box {
+    flex: 1;
+    padding: 24px;
+    background: linear-gradient(145deg, rgba(26, 27, 38, 0.8), rgba(13, 14, 20, 0.8));
+    border-radius: 16px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.metric-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
+.metric-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.metric-value {
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #fff, #a0a0a0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+}
+
+.metric-value span {
+    font-size: 0.6em;
+    opacity: 0.8;
+}
+
+.metric-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1em;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.metric-sublabel {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9em;
+}
+
+.accuracy .metric-value {
+    color: #4ade80;
+    background: linear-gradient(135deg, #4ade80, #22c55e);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.processing .metric-value {
+    background: linear-gradient(135deg, #60a5fa, #3b82f6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.languages .metric-value {
+    background: linear-gradient(135deg, #c084fc, #a855f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

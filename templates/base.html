@@ -7,32 +7,101 @@
     <title>{% block title %}Home Page{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <style>
+                /* Make navbar fixed and allow it to slide up/out on scroll */
+                .navbar {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    z-index: 1030;
+                    transition: transform 0.25s ease-in-out;
+                    will-change: transform;
+                }
+
+                /* When this class is applied the navbar is hidden (slides up) */
+                .navbar-hidden {
+                    transform: translateY(-100%);
+                }
+
+                /* Prevent content from jumping under the fixed navbar */
+                body {
+                    padding-top: 70px; /* adjust if your navbar height is different */
+                }
+            </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">SANS ALM</a>
+            <div class="nav-logo">
+            <i class="fa-brands fa-soundcloud" style="color: #fcfcfc;"></i>
+            </div>
+            <a class="navbar-brand text-light" href="#">SANS ALM</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 nav-manu">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active text-light" aria-current="page" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" aria-current="page" href="#">Analyze</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" aria-current="page" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" aria-current="page" href="#">Features</a>
                     </li>
                 </ul>
+               
             </div>
+             <div class="d-flex nav-buttons">
+
+                <a href="#" class="btn btn-light">Get Started</a>
+                </div>
+            
+
         </div>
     </nav>
     {% block content %}
     {% endblock %}
-</body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
+
+</body>
+<!-- <script>
+    (function () {
+        var lastScroll = 0;
+        var navbar = document.querySelector('.navbar');
+        if (!navbar) return;
+        var delta = 5; // minimum scroll distance before we react
+        var navbarHeight = navbar.offsetHeight;
+
+        window.addEventListener('scroll', function () {
+            var st = window.scrollY || document.documentElement.scrollTop;
+            if (Math.abs(st - lastScroll) <= delta) return;
+
+            if (st > lastScroll && st > navbarHeight) {
+                // scrolling down -> hide navbar
+                navbar.classList.add('navbar-hidden');
+            } else {
+                // scrolling up -> show navbar
+                navbar.classList.remove('navbar-hidden');
+            }
+
+            lastScroll = st <= 0 ? 0 : st;
+        }, { passive: true });
+    })();
+</script> -->
 
 </html>

@@ -1,8 +1,72 @@
 {% extends 'base.html' %}
 {% block title %}Home Page{% endblock %}
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/hero.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/analyzePage.css') }}">
 <div class="container mt-5">
-    <h1>Welcome to the Home Page</h1>
-    <p>This is the main content of the home page.</p> 
+    <section class="hero" id="hero">
+        <div class="hero-inner text-center">
+            <div class="hero-logo" aria-hidden="true">
+                <i class="fa-brands fa-soundcloud" style="color: #fcfcfc;"></i>
+            </div>
+
+            <h1 class="hero-title text-white h1">SANS ALM</h1>
+            <p class="hero-sub text-white"><b>Advanced Audio Intelligence Platform</b></p>
+
+            <p class="hero-description text-white">
+                Decode, analyze, and protect with advanced trilingual AI that transforms audio into actionable intelligence.
+                Detect threats, understand context, and ensure security with cutting-edge machine learning.
+            </p>
+
+            <div class="hero-actions">
+                <a class="btn btn1 btn-primary btn-start bg-white" href="#" role="button">
+                    <i class="fa-solid fa-play fa-beat" style="color: #0a0c0f;"></i>
+                    Start Analysis</a>
+                <a class="btn btn2 btn-outline btn-view" href="#" role="button">
+                    <i class="fa-brands fa-github"></i>
+                    View Code</a>
+            </div>
+        </div>
+    </section>
 </div>
+
+
+    <section class="analyze" id="analyze">
+        <div class="analyze-inner">
+            <h1> <span>AI Analysis</span> in Action</h1>
+            <p></p>
+            <div class="analyze-content">
+                <div class="analyze-box">
+                    <div class="analyze-image-container">
+                        <img src="{{ url_for('static', filename='/img/analyze-bg.jpg') }}" alt="" width="100%">
+                    </div>
+                    <div class="analyze-metrics">
+                        <div class="metric-box accuracy">
+                            <div class="metric-value">94.2<span>%</span></div>
+                            <div class="metric-label">Detection Accuracy</div>
+                            <div class="metric-sublabel">Gemini AI Powered</div>
+                        </div>
+                        <div class="metric-box processing">
+                            <div class="metric-value">~45<span>s</span></div>
+                            <div class="metric-label">Processing Time</div>
+                            <div class="metric-sublabel">Full Pipeline Analysis</div>
+                        </div>
+                        <div class="metric-box languages">
+                            <div class="metric-value">3</div>
+                            <div class="metric-label">Languages</div>
+                            <div class="metric-sublabel">Chinese • Urdu • Nepal</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h1>How It Works</h1>
+            <p>Our platform utilizes advanced AI algorithms to analyze and process audio data in real-time.</p>
+
+
+        </div>
+    </section>
+
+
+
 {%endblock %}
