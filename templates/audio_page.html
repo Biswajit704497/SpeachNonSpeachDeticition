@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Intelligence Platform</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/audio_page.css') }}">
+</head>
+<body>
+
+  <div class="container text-center mt-5">
+    <h1 class="title">Audio Intelligence Platform</h1>
+    <p class="subtitle">
+      Advanced AI-powered audio analysis with multilingual threat detection, scene understanding, and comprehensive intelligence extraction.
+    </p>
+
+    <div class="d-flex justify-content-center flex-wrap gap-5 mt-5">
+
+      <!-- Upload Audio -->
+      <div class="card-box upload-box p-5 rounded-5">
+        <h3 class="mb-4 fw-semibold">Upload Audio</h3>
+        <div class="drop-zone rounded-4 p-5">
+          <i class="bi bi-cloud-upload fs-1 mb-3"></i>
+          <p class="lead mb-2">Drop audio files here<br>or click to browse</p>
+          <small class="text-muted">Supports: WAV, MP3, M4A, FLAC, OGG (Max: 100MB)</small>
+          <input type="file" class="form-control mt-4" accept="audio/*">
+        </div>
+      </div>
+
+      <!-- Audio Intelligence Info -->
+      <div class="card-box info-box p-5 rounded-5 text-start">
+        <h3 class="fw-semibold text-center mb-4">Ready for Audio Intelligence</h3>
+        <p class="text-muted text-center mb-4">
+          Upload an audio file to begin comprehensive AI analysis with our Phase 2 Audio Intelligence Pipeline.
+        </p>
+
+        <ul class="list-unstyled feature-list mb-5">
+          <li>🎧 <span>Multi-Model AI</span></li>
+          <li>🛡️ <span>Threat Detection</span></li>
+          <li>🌐 <span>Trilingual Support</span></li>
+          <li>⚡ <span>Real-time Processing</span></li>
+        </ul>
+
+        <div class="ai-analysis text-center p-4 rounded-4">
+          <h5 class="fw-bold mb-2">SoundSense AI Analysis</h5>
+          <p class="text-muted small mb-0">
+            Upload an audio file to begin advanced AI-powered analysis with our Phase 2 Enhanced Pipeline.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+</body>
+</html>

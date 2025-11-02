@@ -1,69 +1,97 @@
 .analyze-inner {
     text-align: center;
-    padding: 50px;
+    padding: 30px 20px;
     background-color: #000;
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 30px;
+    border-radius: 20px;
 }
 
+
+
+
 .analyze-inner h1 {
-    font-size: 2.8em;
-    margin-bottom: 40px;
+    font-size: 2.2em;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 30px;
     color: #ffffff;
-    font-weight: 600;
+    font-weight: 750;
 }
 
 .analyze-content {
     width: 100%;
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
 }
 
 .analyze-box {
     background: rgba(16, 16, 24, 0.8);
-    border-radius: 24px;
-    padding: 40px;
+    border-radius: 16px;
+    padding: 25px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0 auto;
 }
 
 .analyze-image-container {
     background: rgba(0, 0, 0, 0.5);
-    border-radius: 16px;
-    padding: 20px;
-    margin-bottom: 40px;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 25px;
     border: 1px solid rgba(255, 255, 255, 0.05);
+    max-width: 100%;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    position: relative;
 }
 
 .analyze-image-container img {
     width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.demo-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01); /* Slight scale to prevent border gaps */
+    filter: contrast(1.05) brightness(0.95); /* Subtle video enhancement */
+    transition: transform 0.3s ease;
+}
+
+.demo-video:hover {
+    transform: scale(1.02);
 }
 
 .analyze-metrics {
     display: flex;
     justify-content: space-between;
-    gap: 24px;
-    padding: 20px;
+    gap: 15px;
+    padding: 15px;
     background: rgba(0, 0, 0, 0.4);
-    border-radius: 20px;
+    border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .metric-box {
     flex: 1;
-    padding: 24px;
+    padding: 15px;
     background: linear-gradient(145deg, rgba(26, 27, 38, 0.8), rgba(13, 14, 20, 0.8));
-    border-radius: 16px;
+    border-radius: 12px;
     text-align: center;
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
+    min-width: 120px;
 }
 
 .metric-box::before {
@@ -77,15 +105,15 @@
 }
 
 .metric-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 .metric-value {
-    font-size: 2.8em;
+    font-size: 2em;
     font-weight: 700;
     color: #fff;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     background: linear-gradient(135deg, #fff, #a0a0a0);
     background-clip: text;
     -webkit-background-clip: text;
@@ -100,14 +128,14 @@
 
 .metric-label {
     color: rgba(255, 255, 255, 0.9);
-    font-size: 1.1em;
-    margin-bottom: 4px;
+    font-size: 0.95em;
+    margin-bottom: 3px;
     font-weight: 500;
 }
 
 .metric-sublabel {
     color: rgba(255, 255, 255, 0.5);
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 
 .accuracy .metric-value {

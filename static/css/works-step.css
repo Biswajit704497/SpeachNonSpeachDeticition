@@ -1,0 +1,355 @@
+/* Works Section Container */
+.works {
+    text-align: center;
+    margin-top: 0px;
+    padding: 60px 20px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.works h1 {
+    font-size: 2.5em;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.works p {
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 700px;
+    margin: 0 auto 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Workflow Steps Container */
+.work-steps {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    gap: 15px;
+    position: relative;
+    overflow-x: auto;
+}
+
+.workflow {
+    display: none; /* Empty div, hidden */
+}
+
+/* Individual Workflow Step */
+.workflow-step {
+    flex: 1 1 0;
+    width: 100%;
+    min-width: 220px;
+    max-width: 280px;
+    min-height: 280px;
+    background: linear-gradient(145deg, rgba(26, 27, 38, 0.9), rgba(13, 14, 20, 0.9));
+    border-radius: 16px;
+    padding: 25px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.workflow-step::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(194, 131, 253, 0.5), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.workflow-step:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(194, 131, 253, 0.4);
+    box-shadow: 0 8px 30px rgba(194, 131, 253, 0.2), 0 0 40px rgba(194, 131, 253, 0.1);
+}
+
+.workflow-step:hover::before {
+    opacity: 1;
+    background: linear-gradient(90deg, transparent, #C283FD, transparent);
+}
+
+/* Step Icon */
+.step-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(194, 131, 253, 0.2), rgba(168, 85, 247, 0.2));
+    border-radius: 50%;
+    border: 2px solid rgba(194, 131, 253, 0.3);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.step-icon i {
+    font-size: 28px;
+    color: #C283FD;
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+.workflow-step:hover .step-icon {
+    background: linear-gradient(135deg, rgba(194, 131, 253, 0.4), rgba(168, 85, 247, 0.4));
+    border-color: #C283FD;
+    transform: rotate(360deg) scale(1.1);
+    box-shadow: 0 0 20px rgba(194, 131, 253, 0.5);
+}
+
+.workflow-step:hover .step-icon i {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* Step Body */
+.step-body {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.step-title {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -0.3px;
+    transition: color 0.3s ease;
+}
+
+.workflow-step:hover .step-title {
+    color: #C283FD;
+}
+
+.step-desc {
+    font-size: 0.95em;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    flex: 1;
+}
+
+.workflow-step:hover .step-desc {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Workflow Arrow */
+.workflow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(194, 131, 253, 0.4);
+    font-size: 24px;
+    margin: 0 5px;
+    transition: all 0.4s ease;
+    min-width: 30px;
+    flex-shrink: 0;
+}
+
+.workflow-arrow i {
+    transition: all 0.4s ease;
+}
+
+.work-steps:hover .workflow-arrow {
+    color: #C283FD;
+}
+
+.work-steps:hover .workflow-arrow i {
+    transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .workflow-step {
+        min-width: 180px;
+        max-width: 240px;
+        min-height: 260px;
+        padding: 22px 12px;
+    }
+    
+    .step-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .step-icon i {
+        font-size: 24px;
+    }
+    
+    .step-title {
+        font-size: 1.15em;
+    }
+    
+    .step-desc {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 1024px) {
+    .workflow-step {
+        min-width: 160px;
+        max-width: 220px;
+        min-height: 250px;
+        padding: 20px 10px;
+    }
+    
+    .workflow-arrow {
+        font-size: 20px;
+        margin: 0 3px;
+    }
+}
+
+@media (max-width: 768px) {
+    .works {
+        margin-top: 50px;
+        padding: 40px 15px;
+    }
+    
+    .works h1 {
+        font-size: 2em;
+    }
+    
+    .works p {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+    
+    .work-steps {
+        padding: 20px 10px;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    
+    .workflow-arrow {
+        transform: rotate(90deg);
+        margin: 10px 0;
+        font-size: 20px;
+    }
+    
+    .workflow-step {
+        min-width: 100%;
+        max-width: 100%;
+        min-height: auto;
+        margin-bottom: 20px;
+    }
+    
+    .step-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .step-icon i {
+        font-size: 24px;
+    }
+    
+    .step-title {
+        font-size: 1.2em;
+    }
+    
+    .step-desc {
+        font-size: 0.9em;
+    }
+    
+    .workflow-arrow {
+        transform: rotate(90deg);
+        font-size: 20px;
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .works h1 {
+        font-size: 1.8em;
+    }
+    
+    .works p {
+        font-size: 0.95em;
+    }
+    
+    .workflow-step {
+        padding: 25px 15px;
+    }
+    
+    .step-icon {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 15px;
+    }
+    
+    .step-icon i {
+        font-size: 22px;
+    }
+    
+    .step-title {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+    
+    .step-desc {
+        font-size: 0.85em;
+    }
+}
+
+/* Animation for step appearance */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.workflow-step {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.workflow-step:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.workflow-step:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.workflow-step:nth-child(5) {
+    animation-delay: 0.3s;
+}
+
+.workflow-step:nth-child(7) {
+    animation-delay: 0.4s;
+}

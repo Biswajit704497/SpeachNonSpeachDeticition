@@ -1,0 +1,101 @@
+/* General Layout */
+body {
+  background-color: #0b0b0d;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2.3rem;
+  background: linear-gradient(90deg, #a88bfd, #7a5cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: #9b9b9b;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1rem;
+}
+
+/* Card Boxes */
+.card-box {
+  width: 420px;
+  background: #141416;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease;
+}
+
+.card-box:hover {
+  border-color: #7a5cff;
+  box-shadow: 0 0 35px rgba(122, 92, 255, 0.25);
+  transform: translateY(-5px);
+}
+
+/* Upload Section */
+.upload-box .drop-zone {
+  border: 2px dashed rgba(122, 92, 255, 0.5);
+  background: rgba(255, 255, 255, 0.02);
+  color: #cfcfcf;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upload-box .drop-zone:hover {
+  border-color: #a88bfd;
+  background: rgba(122, 92, 255, 0.05);
+  box-shadow: 0 0 20px rgba(122, 92, 255, 0.15);
+}
+
+.upload-box input[type="file"] {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ddd;
+  border-radius: 8px;
+}
+
+.upload-box input[type="file"]::file-selector-button {
+  background: #7a5cff;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.upload-box input[type="file"]::file-selector-button:hover {
+  background: #a88bfd;
+}
+
+/* Feature List */
+.feature-list li {
+  font-size: 1.05rem;
+  margin: 10px 0;
+  color: #d6d6d6;
+}
+
+.feature-list li span {
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+/* AI Analysis Box */
+.ai-analysis {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(122, 92, 255, 0.2);
+  box-shadow: inset 0 0 20px rgba(122, 92, 255, 0.05);
+}
+
+.ai-analysis:hover {
+  border-color: #7a5cff;
+  box-shadow: 0 0 25px rgba(122, 92, 255, 0.25);
+}
+.ai-analysis h5 {
+  color: #a88bfd;
+  font-weight: 600;
+}
