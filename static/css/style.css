@@ -10,7 +10,25 @@
 
 }
 body{
-    
     background-color: #030712;
-    
+    overflow-x: hidden;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        font-size: 12px;
+    }
 }

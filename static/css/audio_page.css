@@ -381,10 +381,43 @@ body {
 }
 
 /* Responsive Design */
+@media (max-width: 991px) {
+  .card-box {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .record-button {
+    width: 90px;
+    height: 90px;
+  }
+
+  .record-button i {
+    font-size: 2.2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .card-box {
     width: 100%;
     max-width: 420px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    padding: 0 15px;
   }
 
   .record-button {
@@ -396,8 +429,164 @@ body {
     font-size: 2rem;
   }
 
+  .record-text {
+    font-size: 0.6rem;
+    bottom: 10px;
+  }
+
   .result-box {
     width: 100%;
     padding: 20px !important;
+  }
+
+  .prediction-result {
+    padding: 25px 15px;
+  }
+
+  .prediction-label {
+    font-size: 1.5rem;
+  }
+
+  .prob-item {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    padding: 0 10px;
+  }
+
+  .card-box {
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .upload-box .drop-zone,
+  .record-box .record-zone {
+    padding: 20px 15px;
+  }
+
+  .record-button {
+    width: 70px;
+    height: 70px;
+  }
+
+  .record-button i {
+    font-size: 1.8rem;
+  }
+
+  .record-text {
+    font-size: 0.55rem;
+    bottom: 8px;
+  }
+
+  .recording-text {
+    font-size: 0.8rem;
+  }
+
+  .result-box {
+    padding: 15px !important;
+  }
+
+  .prediction-result {
+    padding: 20px 12px;
+  }
+
+  .prediction-label {
+    font-size: 1.3rem;
+  }
+
+  .probabilities h5 {
+    font-size: 0.95rem;
+  }
+
+  .prob-item {
+    padding: 6px;
+    margin-bottom: 8px;
+  }
+
+  .prob-item span {
+    font-size: 0.9rem;
+  }
+
+  .prob-label {
+    font-size: 0.95rem;
+  }
+
+  .prob-percentage {
+    font-size: 1rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+  }
+
+  .record-actions .btn {
+    padding: 6px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+  }
+
+  .card-box {
+    padding: 12px;
+  }
+
+  .upload-box .drop-zone,
+  .record-box .record-zone {
+    padding: 15px 12px;
+  }
+
+  .record-button {
+    width: 65px;
+    height: 65px;
+  }
+
+  .record-button i {
+    font-size: 1.6rem;
+  }
+
+  .record-text {
+    font-size: 0.5rem;
+    bottom: 6px;
+  }
+
+  .prediction-result {
+    padding: 15px 10px;
+  }
+
+  .prediction-label {
+    font-size: 1.1rem;
+  }
+
+  .prob-item {
+    padding: 5px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 6px 14px;
+    font-size: 0.85rem;
   }
 }
