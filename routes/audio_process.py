@@ -94,7 +94,7 @@ def predict():
         
         try:
             # Load audio with librosa
-            audio, sr = librosa.load(filepath, sr=22050, mono=True)
+            audio, sr = librosa.load(filepath, sr=22050, mono=True, duration=30)
             
             # Extract features
             features = extract_features(audio, sr, n_mfcc=13)
