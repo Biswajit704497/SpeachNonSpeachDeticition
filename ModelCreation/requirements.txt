@@ -1,7 +1,0 @@
-numpy
-scipy
-librosa
-soundfile
-scikit-learn
-joblib
-tqdm

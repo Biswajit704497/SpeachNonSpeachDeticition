@@ -7,8 +7,9 @@ body {
 }
 
 .title {
-  font-weight: 700;
+  font-weight: 750;
   font-size: 2.3rem;
+  font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(90deg, #a88bfd, #7a5cff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -51,6 +52,12 @@ body {
   box-shadow: 0 0 20px rgba(122, 92, 255, 0.15);
 }
 
+.upload-box .drop-zone.drag-over {
+  border-color: #a88bfd;
+  background: rgba(122, 92, 255, 0.1);
+  transform: scale(1.02);
+}
+
 .upload-box input[type="file"] {
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -72,30 +79,325 @@ body {
   background: #a88bfd;
 }
 
-/* Feature List */
-.feature-list li {
-  font-size: 1.05rem;
-  margin: 10px 0;
-  color: #d6d6d6;
-}
-
-.feature-list li span {
-  margin-left: 8px;
-  font-weight: 500;
-}
-
-/* AI Analysis Box */
-.ai-analysis {
+.upload-box audio {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(122, 92, 255, 0.2);
-  box-shadow: inset 0 0 20px rgba(122, 92, 255, 0.05);
+  border-radius: 8px;
+  padding: 5px;
 }
 
-.ai-analysis:hover {
-  border-color: #7a5cff;
-  box-shadow: 0 0 25px rgba(122, 92, 255, 0.25);
+/* Record Section */
+.record-box .record-zone {
+  border: 2px dashed rgba(255, 107, 107, 0.5);
+  background: rgba(255, 255, 255, 0.02);
+  color: #cfcfcf;
+  transition: all 0.3s ease;
 }
-.ai-analysis h5 {
-  color: #a88bfd;
+
+.record-box .record-zone:hover {
+  border-color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.05);
+  box-shadow: 0 0 20px rgba(255, 107, 107, 0.15);
+}
+
+.record-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.record-button {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+  border: none;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.record-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.record-button.recording {
+  background: linear-gradient(135deg, #ff4757, #ff3838);
+  animation: pulse-record 1.5s ease-in-out infinite;
+}
+
+.record-button i {
+  font-size: 2.5rem;
+  position: absolute;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.record-text {
+  font-size: 0.65rem;
   font-weight: 600;
+  position: absolute;
+  z-index: 3;
+  text-align: center;
+  width: 100%;
+  left: 0;
+  bottom: 12px;
+  padding: 0 5px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7), 0 0 8px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  line-height: 1.2;
+}
+
+.recording-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.pulse-ring {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ff4757;
+  animation: pulse-ring 1.5s ease-in-out infinite;
+  box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7);
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7);
+  }
+  50% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(255, 71, 87, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 71, 87, 0);
+  }
+}
+
+@keyframes pulse-record {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.recording-text {
+  color: #ff6b6b;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.recordedAudioContainer {
+  margin-top: 20px;
+}
+
+.record-actions .btn {
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.record-actions .btn-primary {
+  background: #7a5cff;
+  border: none;
+}
+
+.record-actions .btn-primary:hover {
+  background: #a88bfd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(122, 92, 255, 0.3);
+}
+
+.record-actions .btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.record-actions .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.record-box audio {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 5px;
+}
+
+/* Results Section */
+.result-box {
+  width: 100%;
+  max-width: 800px;
+  background: #141416;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.prediction-result {
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 2px solid rgba(122, 92, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.prediction-result.speech-result {
+  background: rgba(122, 92, 255, 0.1);
+  border-color: rgba(122, 92, 255, 0.5);
+  box-shadow: 0 0 20px rgba(122, 92, 255, 0.2);
+}
+
+.prediction-result.non-speech-result {
+  background: rgba(255, 107, 107, 0.1);
+  border-color: rgba(255, 107, 107, 0.5);
+  box-shadow: 0 0 20px rgba(255, 107, 107, 0.2);
+}
+
+.prediction-icon {
+  animation: pulse-icon 2s ease-in-out infinite;
+}
+
+@keyframes pulse-icon {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.prediction-label {
+  color: #a88bfd;
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.speech-result .prediction-label {
+  color: #7a5cff;
+}
+
+.non-speech-result .prediction-label {
+  color: #ff6b6b;
+}
+
+.probabilities {
+  margin-top: 20px;
+}
+
+.probabilities h5 {
+  color: #fff;
+  font-weight: 600;
+}
+
+.prob-item {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.prob-item span {
+  color: #d6d6d6;
+  font-size: 0.95rem;
+}
+
+.prob-label {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.prob-percentage {
+  font-size: 1.1rem;
+  color: #a88bfd;
+}
+
+.progress {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #7a5cff, #a88bfd);
+  transition: width 0.6s ease;
+}
+
+/* Buttons */
+.btn-primary {
+  background: #7a5cff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #a88bfd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(122, 92, 255, 0.3);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card-box {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .record-button {
+    width: 80px;
+    height: 80px;
+  }
+
+  .record-button i {
+    font-size: 2rem;
+  }
+
+  .result-box {
+    width: 100%;
+    padding: 20px !important;
+  }
 }
