@@ -22,13 +22,17 @@
       <!-- Upload Audio -->
       <div class="card-box upload-box p-5 rounded-5">
         <h3 class="mb-4 fw-semibold">Upload Audio</h3>
+        
         <div class="drop-zone rounded-4 p-5" id="dropZone">
           <i class="bi bi-cloud-upload fs-1 mb-3"></i>
           <p class="lead mb-2">Drop audio files here<br>or click to browse</p>
           <small class=" text-white">Supports: WAV, MP3, M4A<br> (Max: 100MB)</small>
+          <form>
           <input type="file" id="audioFileInput" class="form-control mt-4" accept="audio/*">
+          
           <audio id="uploadedAudio" controls class="mt-3 w-100 d-none"></audio>
           <button id="uploadPredictBtn" class="btn btn-primary mt-3 d-none">Analyze Audio</button>
+          </form>
         </div>
       </div>
 

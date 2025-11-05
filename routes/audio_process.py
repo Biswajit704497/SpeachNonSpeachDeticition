@@ -5,73 +5,23 @@ import librosa
 import joblib
 import tempfile
 from werkzeug.utils import secure_filename
+from models.file_allow import allowed_file
+from models.load_model import load_model
+from models.features_extract import extract_features
 
 audio_bp = Blueprint("audio_bp", __name__)
 
 # Configure upload settings
 UPLOAD_FOLDER = tempfile.gettempdir()
-ALLOWED_EXTENSIONS = {'wav', 'mp3', 'm4a', 'flac', 'ogg'}
 MAX_FILE_SIZE = 100 * 1024 * 1024  # 100MB
-
-# Model path
-MODEL_PATH = "C:\\Users\\Hp\\Desktop\\college project\\SpeachNonSpeachDeticition\\routes\\speech_non_speech_rf.joblib"
-
-# Load model once when module is imported
-_model = None
-
-def load_model():
-    """Load the model if not already loaded."""
-    global _model
-    if _model is None:
-        if os.path.exists(MODEL_PATH):
-            _model = joblib.load(MODEL_PATH)
-        else:
-            raise FileNotFoundError(f"Model file not found at: {MODEL_PATH}")
-    return _model
-
-def allowed_file(filename):
-    """Check if file extension is allowed."""
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
-def extract_features(audio, sr, n_mfcc=13):
-    """Extract features from audio (same as predict_from_mic.py).
-    
-    Returns concatenation of mean and std for:
-    - MFCCs
-    - MFCC deltas (1st derivative)
-    - MFCC delta-deltas (2nd derivative)
-    
-    For n_mfcc=13 this produces 13 * 2 * 3 = 78 features.
-    """
-    audio = audio.astype('float32')
-    
-    # Pad very short audio to avoid errors
-    if audio.size < 2048:
-        audio = np.pad(audio, (0, 2048 - audio.size), mode='constant')
-    
-    # Compute MFCCs
-    mfcc = librosa.feature.mfcc(y=audio, sr=sr, n_mfcc=n_mfcc)
-    # Deltas
-    delta = librosa.feature.delta(mfcc)
-    delta2 = librosa.feature.delta(mfcc, order=2)
-    
-    # Aggregate: mean and std for each set
-    def agg_feats(mat):
-        return np.hstack([np.mean(mat, axis=1), np.std(mat, axis=1)])
-    
-    feats_mfcc = agg_feats(mfcc)
-    feats_delta = agg_feats(delta)
-    feats_delta2 = agg_feats(delta2)
-    
-    features = np.hstack([feats_mfcc, feats_delta, feats_delta2]).astype(np.float32)
-    return features
 
 @audio_bp.route("/audio")
 def audio():
     return render_template("audio_page.html")
 
-@audio_bp.route("/predict", methods=["POST","GET"])
+@audio_bp.route("/predict", methods=["POST"])
 def predict():
+    _model = None
     """Handle audio file upload and return prediction."""
     try:
         # Check if file is present
