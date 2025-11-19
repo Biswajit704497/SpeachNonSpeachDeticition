@@ -1,9 +1,8 @@
 from flask import Flask, Blueprint, render_template, request, jsonify
 import os
-import numpy as np
+import uuid
 import librosa
-import joblib
-import tempfile
+import time
 from werkzeug.utils import secure_filename
 from models.file_allow import allowed_file
 from models.load_model import load_model
@@ -12,7 +11,8 @@ from models.features_extract import extract_features
 audio_bp = Blueprint("audio_bp", __name__)
 
 # Configure upload settings
-UPLOAD_FOLDER = tempfile.gettempdir()
+UPLOAD_FOLDER = os.path.join(os.getcwd(), "static", "uploads")
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 MAX_FILE_SIZE = 100 * 1024 * 1024  # 100MB
 
 @audio_bp.route("/audio")
@@ -37,8 +37,8 @@ def predict():
         if not allowed_file(file.filename):
             return jsonify({'error': 'File type not allowed. Allowed types: WAV, MP3, M4A, FLAC, OGG'}), 400
         
-        # Save temporary file
-        filename = secure_filename(file.filename)
+        # Save file in uploads folder 
+        filename = f"{int(time.time())}_{secure_filename(file.filename)}"
         filepath = os.path.join(UPLOAD_FOLDER, filename)
         file.save(filepath)
         
@@ -79,7 +79,8 @@ def predict():
             result = {
                 'success': True,
                 'prediction': str(prediction),
-                'label': result_label
+                'label': result_label,
+                'file_url': f"/static/uploads/{filename}"
             }
             
             if hasattr(model, 'predict_proba'):
@@ -102,13 +103,12 @@ def predict():
                     result['probabilities'] = proba.tolist()
             
         finally:
-            # Clean up temporary file
-            if os.path.exists(filepath):
-                os.remove(filepath)
-        
+            pass
+
         return jsonify(result)
         
     except FileNotFoundError as e:
         return jsonify({'error': f'Model not found: {str(e)}'}), 500
+    
     except Exception as e:
         return jsonify({'error': f'Prediction error: {str(e)}'}), 500
