@@ -1,7 +1,12 @@
 import joblib
-MODEL_PATH = "C:\\Users\\Hp\\Desktop\\college project\\SpeachNonSpeachDeticition\\routes\\speech_non_speech_rf.joblib"
 import os
-_model=None
+
+# Get the directory of this file (models/)
+MODEL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MODEL_PATH = os.path.join(MODEL_DIR, "routes", "speech_non_speech_rf.joblib")
+
+_model = None
+
 def load_model():
     """Load the model if not already loaded."""
     global _model
