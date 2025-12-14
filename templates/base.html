@@ -80,29 +80,4 @@
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
-<!-- <script>
-    (function () {
-        var lastScroll = 0;
-        var navbar = document.querySelector('.navbar');
-        if (!navbar) return;
-        var delta = 5; // minimum scroll distance before we react
-        var navbarHeight = navbar.offsetHeight;
-
-        window.addEventListener('scroll', function () {
-            var st = window.scrollY || document.documentElement.scrollTop;
-            if (Math.abs(st - lastScroll) <= delta) return;
-
-            if (st > lastScroll && st > navbarHeight) {
-                // scrolling down -> hide navbar
-                navbar.classList.add('navbar-hidden');
-            } else {
-                // scrolling up -> show navbar
-                navbar.classList.remove('navbar-hidden');
-            }
-
-            lastScroll = st <= 0 ? 0 : st;
-        }, { passive: true });
-    })();
-</script> -->
-
 </html>
