@@ -1,4 +1,5 @@
 import joblib
+MODEL_PATH = "C:\\Users\\ytsub\\Desktop\\github\\SpeachNonSpeachDeticition\\routes\\speech_non_speech_rf.joblib"
 import os
 
 # Get the directory of this file (models/)
