@@ -1,252 +1,106 @@
-.container{
-    height: 85vh;
-    display: flex;
-    flex-direction: column;
-}
-section.hero {
-    background-image: url('../img/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    min-height: 75vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 4rem 2rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    border-radius: 30px;
-    width: 100%;
-    height: 100%;
-}
-section.hero::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.6); /* black shadow overlay */
-    pointer-events: none;
-    z-index: 1;
-}
-section.hero > *{
-    position: relative;
-    z-index: 2;
-}
-.hero-inner{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.container {
+  max-width: 1100px;
 }
 
-.hero-logo i{
-    font-size: 8rem;
+.hero {
+  margin-top: 32px;
 }
-.hero-title, .hero-sub, .hero-description {
-    color: #fcfcfc;
+
+.hero-inner {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 28px;
+  border: 3px solid #0f172a;
+  box-shadow: 12px 14px 0 #0f172a;
+  padding: 40px 32px 44px;
 }
+
+.hero-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  border: 3px solid #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #bbf7d0;
+  box-shadow: 6px 7px 0 #0f172a;
+  margin-inline: auto;
+  margin-bottom: 18px;
+  font-size: 28px;
+}
+
 .hero-title {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-top: 0.2rem;
-    margin-bottom: 0.5rem;
+  font-family: "Lato", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.4rem, 4vw, 3rem);
+  line-height: 1.05;
+  color: #0f172a;
+  margin-bottom: 8px;
 }
-.hero-sub{
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+
+.hero-sub {
+  font-size: 1.1rem;
+  color: #065f46;
+  margin-bottom: 12px;
 }
+
 .hero-description {
-    font-size: 1.1rem;
-    max-width: 700px;
-    margin-bottom: 2rem;
-    line-height: 1.6;
+  max-width: 620px;
+  margin-inline: auto;
+  color: #111827;
+}
+
+.hero-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
 }
 
 .hero-actions .btn {
-    margin: 0 0.5rem;
-    padding: 0.75rem 1.5rem;
-    font-size: 1.1rem;
-    border-radius: 30px;
-    transition: background-color 0.3s, color 0.3s;
+  border-radius: 999px;
+  border: 2px solid #0f172a;
+  font-weight: 800;
+  padding: 10px 22px;
+  box-shadow: 6px 7px 0 #0f172a;
+  transition: transform 0.1s ease, box-shadow 0.1s ease,
+    background-color 0.15s ease, color 0.15s ease;
+}
 
-}
-.hero-actions {
-   margin-top: 45px;
-}
 .hero-actions .btn1 {
-    background-color: #ffffff;
-    color: #0a0c0f;
-    border: none;
-}
-.hero-actions .btn2 {
-    background-color: transparent;
-    color: #ffffff;
-    border: 1px solid #ffffff;
+  background: #22c55e;
+  color: #022c22;
 }
 
-/* Mobile Responsive Styles */
-@media (max-width: 991px) {
-    .container {
-        height: auto;
-        min-height: 75vh;
-    }
-    
-    section.hero {
-        min-height: 70vh;
-        padding: 3rem 1.5rem;
-        border-radius: 20px;
-    }
-    
-    .hero-logo i {
-        font-size: 6rem;
-    }
-    
-    .hero-title {
-        font-size: 2.8rem;
-    }
-    
-    .hero-sub {
-        font-size: 1.3rem;
-        margin-bottom: 1.2rem;
-    }
-    
-    .hero-description {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .hero-actions {
-        margin-top: 35px;
-    }
-    
-    .hero-actions .btn {
-        margin: 0 0.4rem;
-        padding: 0.65rem 1.3rem;
-        font-size: 1rem;
-    }
+.hero-actions .btn2 {
+  background: #ecfeff;
+  color: #0f172a;
+}
+
+.hero-actions .btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 8px 9px 0 #0f172a;
+}
+
+/* Override bootstrap text utilities inside hero so text stays dark */
+.hero-inner .text-white {
+  color: #0f172a !important;
 }
 
 @media (max-width: 768px) {
-    .container {
-        height: auto;
-        min-height: 70vh;
-    }
-    
-    section.hero {
-        min-height: 65vh;
-        padding: 2.5rem 1.5rem;
-        border-radius: 15px;
-    }
-    
-    .hero-logo i {
-        font-size: 5rem;
-    }
-    
-    .hero-title {
-        font-size: 2.2rem;
-        margin-bottom: 0.4rem;
-    }
-    
-    .hero-sub {
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
-    }
-    
-    .hero-description {
-        font-size: 0.95rem;
-        margin-bottom: 1.5rem;
-        padding: 0 10px;
-    }
-    
-    .hero-actions {
-        margin-top: 30px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-    }
-    
-    .hero-actions .btn {
-        margin: 0;
-        padding: 0.6rem 1.2rem;
-        font-size: 0.95rem;
-        width: 100%;
-        max-width: 280px;
-    }
+  .hero-inner {
+    padding: 30px 20px 34px;
+    box-shadow: 8px 10px 0 #0f172a;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
 }
 
-@media (max-width: 480px) {
-    .container {
-        height: auto;
-        min-height: 65vh;
-    }
-    
-    section.hero {
-        min-height: 60vh;
-        padding: 2rem 1rem;
-        border-radius: 12px;
-    }
-    
-    .hero-logo i {
-        font-size: 4rem;
-    }
-    
-    .hero-title {
-        font-size: 1.8rem;
-        margin-bottom: 0.3rem;
-    }
-    
-    .hero-sub {
-        font-size: 1rem;
-        margin-bottom: 0.8rem;
-    }
-    
-    .hero-description {
-        font-size: 0.9rem;
-        margin-bottom: 1.2rem;
-        padding: 0 5px;
-        line-height: 1.5;
-    }
-    
-    .hero-actions {
-        margin-top: 25px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-    
-    .hero-actions .btn {
-        padding: 0.55rem 1rem;
-        font-size: 0.9rem;
-        max-width: 250px;
-    }
-}
 
-@media (max-width: 320px) {
-    section.hero {
-        min-height: 55vh;
-        padding: 1.5rem 0.8rem;
-    }
-    
-    .hero-logo i {
-        font-size: 3.5rem;
-    }
-    
-    .hero-title {
-        font-size: 1.5rem;
-    }
-    
-    .hero-sub {
-        font-size: 0.9rem;
-    }
-    
-    .hero-description {
-        font-size: 0.85rem;
-    }
-    
-    .hero-actions .btn {
-        padding: 0.5rem 0.9rem;
-        font-size: 0.85rem;
-        max-width: 220px;
-    }
-}

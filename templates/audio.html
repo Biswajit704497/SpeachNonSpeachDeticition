@@ -9,51 +9,69 @@
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 </style>
-
 </head>
 
 <body>
-  <!-- <nav>
-    <a href="#" class="button">Home</a>
-    <a href="#" class="button">Voice TO Text</a>
-    <a href="#" class="button">Voice Bot</a>
-    <a href="#" class="button">chat Bot</a>
+  <div class="page">
+    <header class="hero">
+      <p class="eyebrow">Audio to Insight</p>
+      <h1>Upload your<br>Audio</h1>
+      <p class="subtitle">Turn any audio file into an AI-powered preview and visualization.</p>
+    </header>
 
-  </nav> -->
+    <main class="panel">
+      <form action="/audio_route" method="POST" enctype="multipart/form-data" class="upload-form">
+        <label for="audio-input" class="file-label">
+          <div class="file-text">
+            <span class="file-title">Drop your audio here or browse</span>
+            <span class="file-hint" id="file-name">Supported: .wav, .mp3, .m4a</span>
+          </div>
+          <input id="audio-input" type="file" name="audio" accept=".wav,.mp3,.M4A" required>
+        </label>
+        <button type="submit" class="primary-btn">Generate</button>
+        <!-- <div class="chips">
+          <span class="chip">React</span>
+          <span class="chip">Next.js</span>
+          <span class="chip">Transformers</span>
+          <span class="chip">VSCode</span>
+          <span class="chip">TensorFlow</span>
+          <span class="chip">Go</span>
+        </div> -->
+      </form>
+    </main>
 
-  <div class="audio">
-    <h1 class="lato-bold">Upload Audio</h1>
-    <form action="/audio_route" method="POST" enctype="multipart/form-data">
-      <input type="file" name="audio" accept=".wav,.mp3,.M4A" required>
-      <button type="submit">Upload</button>
-    </form>
+    {% if audio_url %}
+    <section class="wave-card">
+      <div id="waveform"></div>
+      <button type="button" class="secondary-btn" onclick="wavesurfer.playPause()">▶ Play / Pause</button>
+    </section>
+    {% endif %}
   </div>
 
-  <div class="audio-graph">
+  <script src="https://unpkg.com/wavesurfer.js@7"></script>
+  {% if audio_url %}
+  <script>
+    const wavesurfer = WaveSurfer.create({
+      container: '#waveform',
+      waveColor: '#93c5fd',
+      progressColor: '#1d4ed8',
+      cursorColor: '#111827',
+      height: 140,
+      barWidth: 2,
+      barGap: 1,
+      responsive: true
+    });
+    wavesurfer.load("{{ url_for('static', filename=audio_url) }}");
+  </script>
+  {% endif %}
+  <script>
+    const fileInput = document.getElementById('audio-input');
+    const fileName = document.getElementById('file-name');
 
-    <div id="waveform"></div>
-
-    <button onclick="wavesurfer.playPause()">▶ Play / Pause</button>
-
-  </div>
-  
-
-
-  
+    fileInput.addEventListener('change', (event) => {
+      const name = event.target.files[0]?.name;
+      fileName.textContent = name || 'Supported: .wav, .mp3, .m4a';
+    });
+  </script>
 </body>
-<script src="https://unpkg.com/wavesurfer.js@7"></script>
-<script>
-const wavesurfer = WaveSurfer.create({
-  container: '#waveform',
-  waveColor: '#93c5fd',      // light blue
-  progressColor: '#1d4ed8',  // dark blue
-  cursorColor: '#111827',
-  height: 120,
-  barWidth: 2,
-  barGap: 1,
-  responsive: true
-});
-
-wavesurfer.load("{{ url_for('static', filename=audio_url) }}");
-</script>
 </html>
