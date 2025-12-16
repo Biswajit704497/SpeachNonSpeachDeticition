@@ -24,10 +24,12 @@
             </p>
 
             <div class="hero-actions">
-                <a class="btn btn1 btn-primary btn-start bg-white" href="{{ url_for('audio_bp.audio') }}" role="button">
+                <a class="btn btn1 btn-primary btn-start bg-white" href="{{ url_for('audio_bp.audio_route') }}"
+                    role="button" target="_blank">
                     <i class="fa-solid fa-play fa-beat" style="color: #0a0c0f;"></i>
                     Start Analysis</a>
-                <a class="btn btn2 btn-outline btn-view" href="https://github.com/Biswajit704497/SpeachNonSpeachDeticition.git" role="button">
+                <a class="btn btn2 btn-outline btn-view"
+                    href="https://github.com/Biswajit704497/SpeachNonSpeachDeticition.git" role="button" target="_blank">
                     <i class="fa-brands fa-github"></i>
                     View Code</a>
             </div>
@@ -47,7 +49,7 @@
                 <div class="analyze-image-container">
                     <!-- <img src="{{ url_for('static', filename='/img/analyze-bg.jpg') }}" alt="" width="100%"> -->
                     <video src="{{ url_for('static', filename='/video/video1.mp4') }}" autoplay loop muted playsinline
-                        class="demo-video"></video>
+                        class="demo-video" ></video>
                 </div>
                 <div class="analyze-metrics">
                     <div class="metric-box accuracy">
@@ -80,44 +82,46 @@
 
         <div class="work-steps">
             <div class="workflow"></div>
-                <div class="workflow-step">
-                    <div class="step-icon" aria-hidden="true"><i class="fa-solid fa-file-audio"></i></div>
-                    <div class="step-body">
-                        <div class="step-title">Input Audio</div>
-                        <div class="step-desc">User uploads a file or records live audio (wav, mp3).</div>
-                    </div>
-                </div>
-
-                <div class="workflow-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right-long"></i></div>
-
-                <div class="workflow-step">
-                    <div class="step-icon" aria-hidden="true"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                    <div class="step-body">
-                        <div class="step-title">Preprocessing</div>
-                        <div class="step-desc">Noise reduction, normalization, segmentation, and feature extraction (MFCC, spectrogram).</div>
-                    </div>
-                </div>
-
-                <div class="workflow-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right-long"></i></div>
-
-                <div class="workflow-step">
-                    <div class="step-icon" aria-hidden="true"><i class="fa-solid fa-brain"></i></div>
-                    <div class="step-body">
-                        <div class="step-title">AI Processing</div>
-                        <div class="step-desc">Model ingests features: classification, speech/non-speech detection and context analysis.</div>
-                    </div>
-                </div>
-
-                <div class="workflow-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right-long"></i></div>
-
-                <div class="workflow-step">
-                    <div class="step-icon" aria-hidden="true"><i class="fa-solid fa-chart-line"></i></div>
-                    <div class="step-body">
-                        <div class="step-title">Prediction & Output</div>
-                        <div class="step-desc">Predictions, confidence scores and an exportable report (dashboard).</div>
-                    </div>
+            <div class="workflow-step">
+                <div class="step-icon" aria-hidden="true"><i class="fa-solid fa-file-audio"></i></div>
+                <div class="step-body">
+                    <div class="step-title">Input Audio</div>
+                    <div class="step-desc">User uploads a file or records live audio (wav, mp3).</div>
                 </div>
             </div>
+
+            <div class="workflow-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right-long"></i></div>
+
+            <div class="workflow-step">
+                <div class="step-icon" aria-hidden="true"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <div class="step-body">
+                    <div class="step-title">Preprocessing</div>
+                    <div class="step-desc">Noise reduction, normalization, segmentation, and feature extraction (MFCC,
+                        spectrogram).</div>
+                </div>
+            </div>
+
+            <div class="workflow-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right-long"></i></div>
+
+            <div class="workflow-step">
+                <div class="step-icon" aria-hidden="true"><i class="fa-solid fa-brain"></i></div>
+                <div class="step-body">
+                    <div class="step-title">AI Processing</div>
+                    <div class="step-desc">Model ingests features: classification, speech/non-speech detection and
+                        context analysis.</div>
+                </div>
+            </div>
+
+            <div class="workflow-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right-long"></i></div>
+
+            <div class="workflow-step">
+                <div class="step-icon" aria-hidden="true"><i class="fa-solid fa-chart-line"></i></div>
+                <div class="step-body">
+                    <div class="step-title">Prediction & Output</div>
+                    <div class="step-desc">Predictions, confidence scores and an exportable report (dashboard).</div>
+                </div>
+            </div>
+        </div>
     </div>
     <!--works-section-end-->
 
@@ -132,7 +136,8 @@
                     <i class="fa-solid fa-brain"></i>
                 </div>
                 <h3 class="feature-title">AI Intelligence</h3>
-                <p class="feature-description">Advanced Gemini AI for contextual analysis and threat detection with Phase 3 integration.</p>
+                <p class="feature-description">Advanced Gemini AI for contextual analysis and threat detection with
+                    Phase 3 integration.</p>
                 <ul class="feature-list">
                     <li class="feature-item">
                         <span class="check-icon"><i class="fa-solid fa-check"></i></span>
@@ -154,7 +159,8 @@
                     <i class="fa-solid fa-language"></i>
                 </div>
                 <h3 class="feature-title">Multilingual Support</h3>
-                <p class="feature-description">Process audio in Chinese, Urdu, and Nepali languages with cultural context understanding.</p>
+                <p class="feature-description">Process audio in Chinese, Urdu, and Nepali languages with cultural
+                    context understanding.</p>
                 <ul class="feature-list">
                     <li class="feature-item">
                         <span class="check-icon"><i class="fa-solid fa-check"></i></span>
@@ -176,7 +182,8 @@
                     <i class="fa-solid fa-shield-halved"></i>
                 </div>
                 <h3 class="feature-title">Security First</h3>
-                <p class="feature-description">Multi-layered security with confidence scoring and enterprise-grade protection.</p>
+                <p class="feature-description">Multi-layered security with confidence scoring and enterprise-grade
+                    protection.</p>
                 <ul class="feature-list">
                     <li class="feature-item">
                         <span class="check-icon"><i class="fa-solid fa-check"></i></span>

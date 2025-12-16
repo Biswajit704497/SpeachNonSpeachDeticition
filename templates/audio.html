@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Upload</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/audio.css' ) }}">
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+</style>
+
+</head>
+
+<body>
+  <!-- <nav>
+    <a href="#" class="button">Home</a>
+    <a href="#" class="button">Voice TO Text</a>
+    <a href="#" class="button">Voice Bot</a>
+    <a href="#" class="button">chat Bot</a>
+
+  </nav> -->
+
+  <div class="audio">
+    <h1 class="lato-bold">Upload Audio</h1>
+    <form action="/audio_route" method="POST" enctype="multipart/form-data">
+      <input type="file" name="audio" accept=".wav,.mp3,.M4A" required>
+      <button type="submit">Upload</button>
+    </form>
+  </div>
+
+  <div class="audio-graph">
+
+    <div id="waveform"></div>
+
+    <button onclick="wavesurfer.playPause()">▶ Play / Pause</button>
+
+  </div>
+  
+
+
+  
+</body>
+<script src="https://unpkg.com/wavesurfer.js@7"></script>
+<script>
+const wavesurfer = WaveSurfer.create({
+  container: '#waveform',
+  waveColor: '#93c5fd',      // light blue
+  progressColor: '#1d4ed8',  // dark blue
+  cursorColor: '#111827',
+  height: 120,
+  barWidth: 2,
+  barGap: 1,
+  responsive: true
+});
+
+wavesurfer.load("{{ url_for('static', filename=audio_url) }}");
+</script>
+</html>

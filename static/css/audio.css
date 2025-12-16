@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.button{
+    border: 4px solid black;
+      background-color: white;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    padding: 10px 10px;
+     cursor: pointer;
+     padding: 10px 20px;
+}
+.button:hover {
+    background-color: rgb(180, 179, 179);
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.audio{
+    border: 2px solid black;
+    width:30%;
+    margin-top: 100px;
+    height: 300px;
+   background-color: greenyellow;
+   border-radius: 30px;
+   padding: 10px 20px;
+
+}
+.audio h1{
+    text-align: center;
+    margin: 20px 0px;
+
+}
+.lato-bold {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.lato-thin {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+form{
+    border: 2px solid black;
+    height: 200px ;
+    width: 100%;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+form input{
+    border: 2px solid black;
+    background-color: white;
+    font-size: 1.2rem;
+    border-radius: 30px;
+}
+form button{
+     border: 2px solid black;
+      background-color: white;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    padding: 10px 10px;
+     cursor: pointer;
+
+}
+.audio-graph{
+    border: 2px solid black;
+    width: 80%;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     gap: 20px;
+}
+
+.audio-graph #waveform{
+    /* border: 2px solid black; */
+    width: 80%;
+    height: 100%;
+ 
+}
+.audio-graph button{
+    width: 15%;
+     border: 2px solid black;
+      background-color: white;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    padding: 10px 10px;
+    cursor: pointer;
+}
+nav{
+    border: 4px solid black;
+    width: 96%;
+    height: 60px;
+    border-radius: 30px;
+    display: flex;
+    justify-content:space-around;
+    align-items:center;
+}
+nav a{
+    text-decoration: none;
+    color: black;
+}

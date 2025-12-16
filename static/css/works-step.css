@@ -3,7 +3,7 @@
     text-align: center;
     margin-top: 0;
     padding: clamp(40px, 6vw, 80px) 20px;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%);
+    background-color: #030712;
     border-radius: 20px;
     display: flex;
     justify-content: center;
