@@ -1,5 +1,5 @@
 import joblib
-MODEL_PATH = "C:\\Users\\Hp\\Desktop\\college project\\SpeachNonSpeachDeticition\\routes\\speech_non_speech_rf.joblib"
+MODEL_PATH = "C:\\Users\\ytsub\\Desktop\\github\\SpeachNonSpeachDeticition\\routes\\speech_non_speech_rf.joblib"
 import os
 _model=None
 def load_model():
